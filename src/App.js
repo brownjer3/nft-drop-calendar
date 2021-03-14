@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import TodayContainer from './Containers/TodayContainer'
 import NavbarContainer from './Containers/NavbarContainer'
 import Home from './Containers/Home'
+import Discover from './Containers/Discover'
+import TodayContainer from './Containers/TodayContainer'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <NavbarContainer />
           <Route exact path="/" component={Home} />
           <Route exact path="/today" component={TodayContainer} />
-          {/* <Route exact path="/login" component={Login} /> */}
+          <Route exact path="/discover" component={Discover} />
         </div>
       </Router>
     </div>
