@@ -9,7 +9,7 @@ class Search extends Component {
         return(
             <div className='d-flex justify-content-center'>
                 <Form inline>
-                    <FormControl type="text" placeholder="Search" className="m-2" size="lg"/>
+                    <FormControl type="text" placeholder="Search" className="" size="lg"/>
                     <Button variant="outline-info" size="lg">Search</Button>
                 </Form>
             </div>

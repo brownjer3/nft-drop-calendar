@@ -3,7 +3,8 @@ import Logo from '../Assets/drop-cal-logo-1.png';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 // import Nav from 'react-bootstrap/Nav'
 // import Form from 'react-bootstrap/Form'
@@ -27,7 +28,7 @@ class NavbarContainer extends Component {
                         </Navbar.Brand>
                     </NavLink>
                     <div className='col d-flex justify-content-end'>
-                        <Button className='' type='button' size='lg' variant="outline-info">Add Drop</Button>
+                        <FontAwesomeIcon icon={faPlus} size='2x' className='text-warning'/>
                     </div>
                     
                     {/* <Form inline>
