@@ -40,7 +40,7 @@ class EventsTable extends Component {
 
     render() {
         return(
-            <Table striped hover variant="dark">
+            <Table striped hover variant="dark" className='border border-primary'>
                 <tbody>
                     <tr >
                         <td>{this.state.one.dropTime} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>

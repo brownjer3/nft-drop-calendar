@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import Search from '../Components/Search'
 import FilterContainer from './FilterContainer'
+import Container from 'react-bootstrap/Container'
 
 
 class SearchContainer extends Component {
     render() {
         return(
-            <div className='mt-4'>
-                <div className="App-header ">
-                    {/* SEARCH HEADER */}
+            <Container className='mt-4'>
+                <div >
                     <Search />
                     <FilterContainer />
                 </div>
-            </div>
+            </Container>
         )
     }
 }

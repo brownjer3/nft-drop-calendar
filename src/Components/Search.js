@@ -7,7 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 class Search extends Component {
     render() {
         return(
-            <div>
+            <div className='d-flex justify-content-center'>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="m-2" size="lg"/>
                     <Button variant="outline-info" size="lg">Search</Button>
