@@ -42,22 +42,25 @@ class EventsTable extends Component {
         return(
             <Table striped hover variant="dark">
                 <tbody>
-                    <tr>
-                        <td>{this.state.one.dropTime} <br/> <FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+                    <tr >
+                        <td>{this.state.one.dropTime} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+                        <td><Image src={this.state.one.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.one.title}</td>
                         <td>{this.state.one.creator}</td>
                         <td>{this.state.one.platform}</td>
                         <td>{this.state.one.tags[0]}, {this.state.one.tags[1]}</td>
                     </tr>
                     <tr>
-                        <td>{this.state.two.dropTime}</td>
+                        <td>{this.state.two.dropTime}<br/> <FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+                        <td><Image src={this.state.two.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.two.title}</td>
                         <td>{this.state.two.creator}</td>
                         <td>{this.state.two.platform}</td>
                         <td>{this.state.two.tags[0]}, {this.state.one.tags[1]}</td>
                     </tr>
                     <tr>
-                        <td>{this.state.three.dropTime}</td>
+                        <td >{this.state.three.dropTime}<br/> <FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+                        <td><Image src={this.state.three.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.three.title}</td>
                         <td>{this.state.three.creator}</td>
                         <td>{this.state.three.platform}</td>

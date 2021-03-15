@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import Logo from '../Assets/drop-cal-logo-1.png';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
 
 // import Nav from 'react-bootstrap/Nav'
 // import Form from 'react-bootstrap/Form'
@@ -13,20 +15,25 @@ class NavbarContainer extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant="dark">
-                    <NavLink to="/" exact >
-                        <Navbar.Brand>
-                            <img src={Logo} width="50" height="50" />
-                        </Navbar.Brand>
-                    </NavLink>
-                    <Nav className="mr-auto">
+                <Navbar bg="dark" variant="dark" className=''>
+                    <Nav className='col '>
                         <NavLink to="/today"><Nav.Link href="/today">Today's Drops</Nav.Link></NavLink>
                         <NavLink to="/discover"><Nav.Link href="/discover">Discover</Nav.Link></NavLink>
                     </Nav>
-                    <Form inline>
+                    <NavLink to="/" exact className='col '>
+                        <Navbar.Brand>
+                            {/* <img src={Logo} width="50" height="50" /> */}
+                            <FontAwesomeIcon icon={faIgloo} size='2x'/>
+                        </Navbar.Brand>
+                    </NavLink>
+                    <div className='col d-flex justify-content-end'>
+                        <Button className='' type='button' size='lg' variant="outline-info">Add Drop</Button>
+                    </div>
+                    
+                    {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-info">Search</Button>
-                    </Form>
+                    </Form> */}
                 </Navbar>
             </div>
         )
