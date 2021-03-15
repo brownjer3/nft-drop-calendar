@@ -8,11 +8,11 @@ class CalendarContainer extends Component {
     render() {
         return(
             <div>
-                <Container className="border border-success" >
+                <Container className="" >
                     <Jumbotron className="calendar py-2">
-                        <h1 className="header">Calendar Container</h1>
+                        <h1 className="header">hello bois</h1>
+                        <hr />
                         <DayContainer />
-                        
                     </Jumbotron>
                 </Container>
             </div>

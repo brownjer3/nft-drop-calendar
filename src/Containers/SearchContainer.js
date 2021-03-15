@@ -6,9 +6,9 @@ import FilterContainer from './FilterContainer'
 class SearchContainer extends Component {
     render() {
         return(
-            <div>
-                <div className="App-header border border-success">
-                    SEARCH HEADER
+            <div className='mt-4'>
+                <div className="App-header ">
+                    {/* SEARCH HEADER */}
                     <Search />
                     <FilterContainer />
                 </div>

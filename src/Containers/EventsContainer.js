@@ -6,9 +6,31 @@ import ListGroup from 'react-bootstrap/ListGroup'
 class EventsContainer extends Component {
 
     state = {
-        image1: "https://d9hhrg4mnvzow.cloudfront.net/on.wax.io/nimoy/78201d67-nimoy-cards-base-front-1_10a60e8000000000000028.png",
-        image2: "https://d9hhrg4mnvzow.cloudfront.net/on.wax.io/nimoy/cf6f9f78-nimoy-cards-blur-17.gif",
-        image3: "https://d9hhrg4mnvzow.cloudfront.net/on.wax.io/nimoy/e6847f57-nimoy-cards-golden-front-2.gif"
+        one: {
+            
+            image: "https://res.cloudinary.com/nifty-gateway/image/upload/q_auto:good,w_500/v1615509111/AMatthew/YoungNSickMarch15/young-open-icon_pmmadt.png",
+            dropTime: "6:30pm ET",
+            title: "HARD TO EXPLAIN",
+            creator: "Young & Sick", 
+            platform: "Nifty Gateway", 
+            tags: ["art", "pack"]
+        }, 
+        two: {
+            image: "https://res.cloudinary.com/nifty-gateway/image/upload/q_auto:good,w_500/v1615502630/AMatthew/NateHillMarch15/nate-auction-icon_j7frwi.png",
+            dropTime: "7pm ET",
+            title: "Getaway",
+            creator: "Nate Hill", 
+            platform: "Nifty Gateway", 
+            tags: ["art", "open edition"]
+        }, 
+        three: {
+            image: "https://res.cloudinary.com/nifty-gateway/image/upload/q_auto:good,w_500/v1615497338/Ashley/PaulJackson/Screen_Shot_2021-03-11_at_4.15.29_PM_sne15a.png",
+            dropTime: "7pm ET",
+            title: "INSIDES",
+            creator: "Paul Jackson", 
+            platform: "Nifty Gateway", 
+            tags: ["art", "open edition"]
+        }
     }
 
     render() {
@@ -16,9 +38,9 @@ class EventsContainer extends Component {
             <div>
                 <Card className="bg-transparent border-0" >
                     <ListGroup variant="flush">
-                        <ListGroup.Item className="bg-transparent">Event 1</ListGroup.Item>
-                        <ListGroup.Item className="bg-transparent"><Event image={this.state.image2} /></ListGroup.Item>
-                        <ListGroup.Item className="bg-transparent"><Event image={this.state.image3} /></ListGroup.Item>
+                        <ListGroup.Item className="bg-transparent"><Event drop={this.state.one} /></ListGroup.Item>
+                        <ListGroup.Item className="bg-transparent"><Event drop={this.state.two} /></ListGroup.Item>
+                        <ListGroup.Item className="bg-transparent"><Event drop={this.state.three}/></ListGroup.Item>
                     </ListGroup>
                 </Card>
                 {/* <Event image={this.state.image1}/>
