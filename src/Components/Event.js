@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import ListGroup from 'react-bootstrap/ListGroup'
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons'
+// import Card from 'react-bootstrap/Card';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
 
@@ -16,8 +18,8 @@ class Event extends Component {
                     <ListGroup.Item className="bg-transparent border-0" >{this.props.drop.title}</ListGroup.Item>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.creator}</ListGroup.Item>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.platform}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.tags}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0">+ TO CAL BUTTON</ListGroup.Item>
+                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.tags[0]}, {this.props.drop.tags[1]}</ListGroup.Item>
+                    <ListGroup.Item className="bg-transparent border-0"><FontAwesomeIcon icon={faCalendarPlus} size='lg' spin /></ListGroup.Item>
                 </ListGroup>    
             </div>
             // <Card className="bg-transparent border-0" >

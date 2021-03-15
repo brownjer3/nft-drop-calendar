@@ -7,7 +7,7 @@ class Day extends Component {
     render() {
         return(
             <div>
-                <h5 className="d-flex pl-2 text-decoration-underline">{this.props.date}</h5>
+                <h3 className="d-flex pl-2">{this.props.date}</h3>
                 <EventsContainer />
             </div>
         )
