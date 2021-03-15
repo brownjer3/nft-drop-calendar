@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/Image';
 class Event extends Component {
     render() {
         return(
-            <Card className="bg-dark text-white my-3" >
+            <Card className="bg-dark text-white my-3 p-2" >
                 <Row>
                     <Col md={4} >
                         <Image src={this.props.image} style={{ height: '12rem' }}/>
