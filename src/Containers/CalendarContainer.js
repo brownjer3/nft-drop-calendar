@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
-import EventContainer from "./EventContainer";
+import DayContainer from './DayContainer';
+
 
 class CalendarContainer extends Component {
     render() {
@@ -10,7 +11,8 @@ class CalendarContainer extends Component {
                 <Container className="border border-success" >
                     <Jumbotron className="calendar py-2">
                         <h1 className="header">Calendar Container</h1>
-                        <EventContainer /> 
+                        <DayContainer />
+                        
                     </Jumbotron>
                 </Container>
             </div>
