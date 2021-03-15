@@ -10,8 +10,8 @@ class CalendarContainer extends Component {
             <div>
                 <Container className="" >
                     <Jumbotron className="calendar py-2">
-                        <h1 className="header">hello bois</h1>
-                        <hr />
+                        <h1 className="header"></h1>
+                        <hr className="border-info"/>
                         <DayContainer />
                     </Jumbotron>
                 </Container>

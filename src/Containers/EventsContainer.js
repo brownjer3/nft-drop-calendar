@@ -36,16 +36,13 @@ class EventsContainer extends Component {
     render() {
         return(
             <div>
-                <Card className="bg-transparent border-0" >
+                <Card className="bg-transparent border-success" >
                     <ListGroup variant="flush">
                         <ListGroup.Item className="bg-transparent"><Event drop={this.state.one} /></ListGroup.Item>
                         <ListGroup.Item className="bg-transparent"><Event drop={this.state.two} /></ListGroup.Item>
                         <ListGroup.Item className="bg-transparent"><Event drop={this.state.three}/></ListGroup.Item>
                     </ListGroup>
                 </Card>
-                {/* <Event image={this.state.image1}/>
-                <Event image={this.state.image1} />
-                <Event image={this.state.image1} /> */}
             </div>
         )
     }

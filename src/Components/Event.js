@@ -13,13 +13,13 @@ class Event extends Component {
         return(
             <div>
                 <ListGroup horizontal className="d-flex justify-content-between">
-                    <Image src={this.props.drop.image} style={{ height: '6rem' }}/>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.dropTime}</ListGroup.Item>
+                    <Image src={this.props.drop.image} style={{ height: '6rem' }}/>
                     <ListGroup.Item className="bg-transparent border-0" >{this.props.drop.title}</ListGroup.Item>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.creator}</ListGroup.Item>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.platform}</ListGroup.Item>
                     <ListGroup.Item className="bg-transparent border-0">{this.props.drop.tags[0]}, {this.props.drop.tags[1]}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0"><FontAwesomeIcon icon={faCalendarPlus} size='lg' spin /></ListGroup.Item>
+                    <ListGroup.Item className="bg-transparent border-0"><FontAwesomeIcon icon={faCalendarPlus} size='lg'/></ListGroup.Item>
                 </ListGroup>    
             </div>
             // <Card className="bg-transparent border-0" >
