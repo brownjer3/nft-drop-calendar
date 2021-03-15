@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Search from '../Components/Search'
+import FilterContainer from './FilterContainer'
 
 
 class SearchContainer extends Component {
     render() {
         return(
             <div>
-                <div className="App-header">
+                <div className="App-header border border-success">
                     SEARCH HEADER
-                </div>
-                <div className="d-flex justify-content-center">
                     <Search />
+                    <FilterContainer />
                 </div>
             </div>
         )
