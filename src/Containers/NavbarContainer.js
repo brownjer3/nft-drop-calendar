@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Logo from '../Assets/drop-cal-logo-1.png';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
 
@@ -15,7 +16,7 @@ class NavbarContainer extends Component {
                 <Navbar bg="dark" variant="dark">
                     <NavLink to="/" exact >
                         <Navbar.Brand>
-                            NFT Drop Cal
+                            <img src={Logo} width="50" height="50" />
                         </Navbar.Brand>
                     </NavLink>
                     <Nav className="mr-auto">
