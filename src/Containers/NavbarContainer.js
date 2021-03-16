@@ -1,7 +1,8 @@
 import React, { Component } from "react"
-import Logo from '../Assets/drop-cal-logo-1.png';
+import Logo from '../Assets/calendrop-logo3.svg';
+// import { ReactComponent as Logo } from '../Assets/calendrop-logo3.svg';
 import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, Form, FormControl, Button, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons'
 
@@ -23,7 +24,8 @@ class NavbarContainer extends Component {
                     </Nav>
                     <NavLink to="/" exact className='col '>
                         <Navbar.Brand>
-                            {/* <img src={Logo} width="50" height="50" /> */}
+                            {/* <Image src={Logo} fluid /> */}
+                            {/* <Logo /> */}
                             <FontAwesomeIcon icon={faIgloo} size='2x'/>
                         </Navbar.Brand>
                     </NavLink>

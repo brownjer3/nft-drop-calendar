@@ -11,8 +11,8 @@ class Search extends Component {
             <>
                 <Form inline>
                     <Col>
-                        <FormControl type="text" placeholder="Find a drop" className="mr-3 w-50" size="lg" />
-                        <Button variant="outline-info" size="lg">Search</Button>
+                        <FormControl type="text" placeholder="Search for a drop" className="my-3 w-50" size="lg" />
+                        {/* <Button variant="outline-info" size="lg">Search</Button> */}
                     </Col>
                 </Form>  
             </>
