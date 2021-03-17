@@ -40,7 +40,7 @@ class EventsContainer extends Component {
                 <tbody>
                     <tr >
                         <td>{this.state.one.dropTime} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
-                        <td><Image src={this.state.one.image} style={{ height: '6rem' }}/></td>
+                        <td><Image rounded src={this.state.one.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.one.title}</td>
                         <td>{this.state.one.creator}</td>
                         <td>{this.state.one.platform}</td>
@@ -48,7 +48,7 @@ class EventsContainer extends Component {
                     </tr>
                     <tr>
                         <td>{this.state.two.dropTime}<br/> <FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
-                        <td><Image src={this.state.two.image} style={{ height: '6rem' }}/></td>
+                        <td><Image rounded src={this.state.two.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.two.title}</td>
                         <td>{this.state.two.creator}</td>
                         <td>{this.state.two.platform}</td>
@@ -56,7 +56,7 @@ class EventsContainer extends Component {
                     </tr>
                     <tr>
                         <td >{this.state.three.dropTime}<br/> <FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
-                        <td><Image src={this.state.three.image} style={{ height: '6rem' }}/></td>
+                        <td><Image rounded src={this.state.three.image} style={{ height: '6rem' }}/></td>
                         <td>{this.state.three.title}</td>
                         <td>{this.state.three.creator}</td>
                         <td>{this.state.three.platform}</td>

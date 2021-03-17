@@ -17,7 +17,7 @@ class RandomContainer extends Component {
             <Card className="bg-transparent border-0" >
                 <Row>
                     <Col >
-                        <Image src={this.state.image} style={{ height: '18rem' }}/>
+                        <Image rounded src={this.state.image} style={{ height: '18rem' }}/>
                     </Col>
                     <Col>
                         <Card.Body>
