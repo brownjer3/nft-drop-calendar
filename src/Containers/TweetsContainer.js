@@ -1,9 +1,10 @@
-import { Component } from "react";
+import React, { Component } from "react";
+
 
 class TweetsContainer extends Component {
     render() {
         return (
-            <div>Tweets</div>
+            <div>tweet</div>
         )
     }
 }
