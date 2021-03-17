@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import RandomContainer from './RandomContainer'
 
 class Discover extends Component {
     render() {
         return(
-            <div className="App-header">DISCOVER</div>
+            <div>
+                <div className="App-header">Random Drop</div> 
+                <Jumbotron className="calendar py-2 d-flex justify-content-center">
+                    <RandomContainer />
+                </Jumbotron>
+            </div>
         )
     }
 }

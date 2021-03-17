@@ -17,9 +17,9 @@ class NavbarContainer extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant="dark" className=''>
+                <Navbar bg="dark" variant="dark">
                     <Nav className='col '>
-                        <NavLink to="/today"><Nav.Link href="/today">Today's Drops</Nav.Link></NavLink>
+                        <NavLink to="/tweets"><Nav.Link href="/today">#NFT</Nav.Link></NavLink>
                         <NavLink to="/discover"><Nav.Link href="/discover">Discover</Nav.Link></NavLink>
                     </Nav>
                     <NavLink to="/" exact className='col '>
