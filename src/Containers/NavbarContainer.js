@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Logo from '../Assets/calendrop-logo3.svg';
+import Logo from '../Assets/calendrop-logo4.png';
 // import { ReactComponent as Logo } from '../Assets/calendrop-logo3.svg';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button, Image } from 'react-bootstrap'
@@ -24,14 +24,14 @@ class NavbarContainer extends Component {
                     </Nav>
                     <NavLink to="/" exact className='col '>
                         <Navbar.Brand>
-                            {/* <Image src={Logo} fluid /> */}
+                            <Image src={Logo} className='w-25 h-25' />
                             {/* <Logo /> */}
-                            <FontAwesomeIcon icon={faIgloo} size='2x'/>
+                            {/* <FontAwesomeIcon icon={faIgloo} size='2x'/> */}
                         </Navbar.Brand>
                     </NavLink>
-                    <div className='col d-flex justify-content-end'>
+                    <NavLink to="/new" exact className='col d-flex justify-content-end'>
                         <FontAwesomeIcon icon={faPlus} size='2x' className='text-warning'/>
-                    </div>
+                    </NavLink >
                     
                     {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
