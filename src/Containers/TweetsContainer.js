@@ -1,10 +1,32 @@
 import React, { Component } from "react";
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import Container from 'react-bootstrap/Container'
 
 
 class TweetsContainer extends Component {
     render() {
         return (
-            <div>tweet</div>
+            <Container className='w-50'>
+                <div >
+                    <TwitterTimelineEmbed 
+                    sourceType="list" 
+                    id="1372285702868758535" 
+                    // noHeader
+                    noFooter
+                    noBorders
+                    noScrollbar
+                    // linkColor='orange'
+                    theme='dark'
+                    options={{height: 400}}
+                    />
+                </div>
+                {/* <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName="saurabhnemade"
+                noHeader={true} 
+                options={{height: 400}}
+                /> */}
+            </Container>
         )
     }
 }
