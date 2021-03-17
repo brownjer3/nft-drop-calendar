@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
+
 // import Nav from 'react-bootstrap/Nav'
 // import Form from 'react-bootstrap/Form'
 // import FormControl from 'react-bootstrap/FormControl'
@@ -17,19 +18,22 @@ class NavbarContainer extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant="dark">
-                    <Nav className='col '>
+                <Navbar className='mx-2' bg="transparent" variant="dark">
+                    <NavLink to="/" exact>
+                        <Navbar.Brand>
+                            
+                            {/* <Image src={Logo} className='w-25 h-25' /> */}
+                            {/* <Logo /> */}
+                            <FontAwesomeIcon icon={faIgloo} size='2x'/>
+                        </Navbar.Brand>
+                    </NavLink>
+
+                    <Nav className='mr-auto'>
                         <NavLink to="/tweets"><Nav.Link href="/today">#NFT</Nav.Link></NavLink>
                         <NavLink to="/discover"><Nav.Link href="/discover">Discover</Nav.Link></NavLink>
                     </Nav>
-                    <NavLink to="/" exact className='col '>
-                        <Navbar.Brand>
-                            <Image src={Logo} className='w-25 h-25' />
-                            {/* <Logo /> */}
-                            {/* <FontAwesomeIcon icon={faIgloo} size='2x'/> */}
-                        </Navbar.Brand>
-                    </NavLink>
-                    <NavLink to="/new" exact className='col d-flex justify-content-end'>
+                    
+                    <NavLink to="/new" exact>
                         <FontAwesomeIcon icon={faPlus} size='2x' className='text-warning'/>
                     </NavLink >
                     
