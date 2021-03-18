@@ -5,6 +5,7 @@ import DayContainer from './DayContainer';
 
 
 class CalendarContainer extends Component {
+    //connect to redux here for currentDay from state
     render() {
         return(
             <div>

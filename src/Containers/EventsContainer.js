@@ -6,6 +6,8 @@ import Table from 'react-bootstrap/Table'
 
 
 class EventsContainer extends Component {
+    // connect to state to grab current date
+    // or maybe just have current day be a local state?
     state = {
         one: {
             

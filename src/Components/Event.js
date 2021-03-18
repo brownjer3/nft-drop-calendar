@@ -22,20 +22,6 @@ class Event extends Component {
                     <ListGroup.Item className="bg-transparent border-0"><FontAwesomeIcon icon={faCalendarPlus} size='lg'/></ListGroup.Item>
                 </ListGroup>    
             </div>
-            // <Card className="bg-transparent border-0" >
-            //     <Row>
-            //         <Col md={4} >
-            //             <Image src={this.props.image} style={{ height: '8rem' }}/>
-            //         </Col>
-            //         <Col md={8}>
-            //         <Card.Body>
-            //             <p>Event Details</p>
-            //             <p>Event Details</p>
-            //             <p>Event Details</p>
-            //         </Card.Body>
-            //         </Col>
-            //     </Row>
-            // </Card>
         )
     }
 }

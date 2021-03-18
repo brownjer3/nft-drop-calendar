@@ -12,8 +12,8 @@ class DayContainer extends Component {
         return(
             <div>
                 <Day date={this.state.date1}/> 
-                <Day date={this.state.date1}/> 
-                <Day date={this.state.date1}/> 
+                <Day date={this.state.date2}/> 
+                <Day date={this.state.date3}/> 
             </div>
         )
     }
