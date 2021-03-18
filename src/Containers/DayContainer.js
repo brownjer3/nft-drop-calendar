@@ -2,18 +2,29 @@ import React, { Component } from "react";
 import Day from "../Components/Day";
 
 class DayContainer extends Component {
-    state = {
-        date1: "Monday, March 15th", 
-        date2: "Tuesday, March 16th", 
-        date3: "Wednesday, March 17th"
+    // this is where i'll organize all events into dates
+    // also where date filtering should happen (based on current day)
+
+    getUniqueDates = () => {
+        const dates = []
+        this.props.events.forEach(event => {
+            if (!dates.includes(event.drop_date)) {
+                dates.push(event.drop_date)
+            }
+        })
+        return dates
+    }
+
+    mapEventDates = () => {
+        return this.getUniqueDates().map(date => {
+            return <Day date={date} />
+        })
     }
 
     render() {
         return(
             <div>
-                <Day date={this.state.date1}/> 
-                <Day date={this.state.date2}/> 
-                <Day date={this.state.date3}/> 
+                {this.mapEventDates()}
             </div>
         )
     }
