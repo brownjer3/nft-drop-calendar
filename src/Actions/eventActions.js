@@ -1,10 +1,31 @@
+const url = 'http://localhost:3000/events'
+
 export const fetchEvents = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_EVENTS'})
-        fetch('http://localhost:3000/events')
+        fetch(url)
         .then(response => response.json())
         .then(data => {
           dispatch({ type: 'LOAD_EVENTS', events: data })
         })
       }
+}
+
+export const createEvent = (event) => {
+
+    return (dispatch) => {
+        const configObj = {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json", 
+                "Accept-Type": "application/json"
+            }, 
+            body: JSON.stringify(event)
+        }
+        fetch(url, configObj)
+        .then(response => response.json())
+        .then(data => {
+            dispatch({ type: 'ADD_EVENT', event: data })
+        })
+    }
 }

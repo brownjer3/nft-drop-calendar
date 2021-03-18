@@ -18,8 +18,10 @@ export default function eventReducer(state =
                 loading: false
             }
         case "ADD_EVENT":
-            return state
-            // return {...state, events: [...events, action.event]}
+            return {
+                ...state, 
+                events: state.events.concat(action.event) 
+            }
         case "DELETE_EVENT":
             return state
             case "EDIT_EVENT":

@@ -13,7 +13,7 @@ class Day extends Component {
     render() {
         return(
             <div>
-                <h3 className="d-flex pl-2">{moment(this.props.date).format('MMMM Do YYYY')}</h3>
+                <h3 className="d-flex pl-2">{moment(this.props.date).format('dddd, MMMM Do')}</h3>
                 <EventsContainer events={this.filterEvents()} />
             </div>
         )
