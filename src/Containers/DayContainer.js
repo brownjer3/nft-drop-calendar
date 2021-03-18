@@ -15,9 +15,10 @@ class DayContainer extends Component {
         return dates
     }
 
+
     mapEventDates = () => {
         return this.getUniqueDates().map(date => {
-            return <Day date={date} />
+            return <Day key={date} date={date} />
         })
     }
 

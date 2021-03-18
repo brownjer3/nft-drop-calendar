@@ -10,18 +10,16 @@ import Image from 'react-bootstrap/Image';
 
 class Event extends Component {
     render() {
+        console.log(this.props.event)
         return(
-            <div>
-                <ListGroup horizontal className="d-flex justify-content-between">
-                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.dropTime}</ListGroup.Item>
-                    <Image src={this.props.drop.image} style={{ height: '6rem' }}/>
-                    <ListGroup.Item className="bg-transparent border-0" >{this.props.drop.title}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.creator}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.platform}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0">{this.props.drop.tags[0]}, {this.props.drop.tags[1]}</ListGroup.Item>
-                    <ListGroup.Item className="bg-transparent border-0"><FontAwesomeIcon icon={faCalendarPlus} size='lg'/></ListGroup.Item>
-                </ListGroup>    
-            </div>
+            <tr >
+                <td>{this.props.event.drop_time} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+                <td><Image rounded src={this.props.event.asset_url} style={{ height: '6rem' }}/></td>
+                <td>{this.props.event.title}</td>
+                <td>{this.props.event.creator_name}</td>
+                <td>{this.props.event.platform_name}</td>
+                <td>{this.props.event.type_name}</td>
+            </tr>
         )
     }
 }
