@@ -1,10 +1,22 @@
 export default function eventReducer(state = 
     {
     events: [],
-    currentDay: ""
+    loading: false
     }, action) {
 
     switch(action.type){
+        case 'LOADING_EVENTS':
+            return {
+              ...state,
+              events: [...state.events],
+              loading: true
+            }
+        case 'LOAD_EVENTS':
+            return {
+                ...state, 
+                events: action.events, 
+                loading: false
+            }
         case "ADD_EVENT":
             return state
             // return {...state, events: [...events, action.event]}
