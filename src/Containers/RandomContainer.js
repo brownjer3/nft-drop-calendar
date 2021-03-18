@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
-import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'

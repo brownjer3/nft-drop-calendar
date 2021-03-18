@@ -8,9 +8,3 @@ export const fetchEvents = () => {
         })
       }
 }
-
-// export const fetchDates = () => {
-//     return (dispatch) => {
-//         dispatch({ type: ''})
-//     }
-// }

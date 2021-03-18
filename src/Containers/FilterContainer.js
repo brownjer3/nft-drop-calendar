@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container"
 import Button from 'react-bootstrap/Button'
-// import Badge from 'react-bootstrap/Badge'
 
 class FilterContainer extends Component {
     render() {
