@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 
 const Search = ({handleInputChange}) => {
     return (
-        <Form inline>
+        <Form inline onSubmit={e => e.preventDefault()}>
             <Col>
                 <FormControl type="text" placeholder="Search for a drop" className="my-3 w-50" size="lg" onChange={(e) => handleInputChange(e)}/>
                 {/* <Button variant="outline-info" size="lg">Search</Button> */}
