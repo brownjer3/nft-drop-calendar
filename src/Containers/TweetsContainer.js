@@ -6,21 +6,18 @@ import Container from 'react-bootstrap/Container'
 class TweetsContainer extends Component {
     render() {
         return (
-            <Container className='w-25'>
+            <Container className='w-50'>
                 <div>
                     <TwitterTimelineEmbed 
-                    sourceType="list" 
-                    id="1372285702868758535" 
-                    // noHeader
-                    noFooter
-                    noBorders
-                    // noScrollbar
-                    transparent
-                    
-                    // linkColor='orange'
-                    theme='dark'
-                    // options={{height: 100}}
-
+                        sourceType="list" 
+                        id="1372285702868758535" 
+                        // noHeader
+                        noFooter
+                        noBorders
+                        // noScrollbar
+                        transparent
+                        theme='dark'
+                        options={{height: 400}}
                     />
                 </div>
                 {/* <TwitterTimelineEmbed

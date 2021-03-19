@@ -27,6 +27,7 @@ class EventForm extends Component {
             drop_date: "", 
             type_name: ""
         })
+        
     }
 
     handleInputChange = (e) => {
