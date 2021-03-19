@@ -12,11 +12,23 @@ class CalendarContainer extends Component {
 
     state = {
         startDate: new Date(), 
-        displayEvents: []
+        displayEvents: [], 
+        query: ""
     }
 
     componentDidMount() {
         this.props.fetchEvents()
+    }
+
+    eventsToDisplay = () => {
+        if (this.state.query) {
+            let displayedEvents = this.props.events
+            return this.props.events.filter((event) => {
+                return event.title.includes(this.state.query)
+            })
+        } else {
+            return this.displayUpcomingEvents()
+        }
     }
 
     displayUpcomingEvents = () => {
@@ -31,14 +43,24 @@ class CalendarContainer extends Component {
         if (this.props.loading) {
             return <FontAwesomeIcon icon={faIgloo} size='2x'/>
         } else {
-            return <DaysContainer events={this.displayUpcomingEvents()} />
+            return <DaysContainer events={this.eventsToDisplay()} />
         }
+    }
+
+    handleInputChange = (e) => {
+        const matchedEvents = this.props.events.filter((event) => {
+            
+        })
+        this.setState(prevState => ({
+            ...prevState,
+            query: e.target.value
+        }))
     }
 
     render() {
         return(
             <>
-                <SearchContainer />
+                <SearchContainer handleInputChange={this.handleInputChange}/>
                 {this.handleLoading()}
             </>
         )

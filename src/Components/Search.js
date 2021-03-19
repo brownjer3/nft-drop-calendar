@@ -5,11 +5,11 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 // import Button from 'react-bootstrap/Button'
 
-const Search = (props) => {
+const Search = ({handleInputChange}) => {
     return (
         <Form inline>
             <Col>
-                <FormControl type="text" placeholder="Search for a drop" className="my-3 w-50" size="lg" />
+                <FormControl type="text" placeholder="Search for a drop" className="my-3 w-50" size="lg" onChange={(e) => handleInputChange(e)}/>
                 {/* <Button variant="outline-info" size="lg">Search</Button> */}
             </Col>
         </Form>  

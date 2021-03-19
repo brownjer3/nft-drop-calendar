@@ -7,9 +7,9 @@ import Container from 'react-bootstrap/Container'
 class SearchContainer extends Component {
     render() {
         return(
-            <Container className='mt-4'>
-                <div >
-                    <Search />
+            <Container>
+                <div>
+                    <Search handleInputChange={this.props.handleInputChange}/>
                     <FilterContainer />
                 </div>
             </Container>
