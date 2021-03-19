@@ -17,7 +17,7 @@ export default function eventReducer(state =
                 loading: false
             }
         case 'ADD_EVENT':
-            debugger
+            
             return {
                 ...state, 
                 events: state.events.concat(action.event) 

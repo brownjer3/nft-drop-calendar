@@ -14,12 +14,12 @@ class TweetsContainer extends Component {
                     // noHeader
                     noFooter
                     noBorders
-                    noScrollbar
+                    // noScrollbar
                     transparent
                     
                     // linkColor='orange'
                     theme='dark'
-                    // options={{height: 400}}
+                    // options={{height: 100}}
 
                     />
                 </div>

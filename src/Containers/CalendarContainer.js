@@ -41,7 +41,7 @@ class CalendarContainer extends Component {
     render() {
         return(
             <div>
-                <Container>
+                <Container className="h-100">
                     <Jumbotron className="calendar py-2">
                         <h1 className="header">Dropping this week</h1>
                         <hr className="border-info"/>

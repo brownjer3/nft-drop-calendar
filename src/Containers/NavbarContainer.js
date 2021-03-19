@@ -29,8 +29,9 @@ class NavbarContainer extends Component {
                     </NavLink>
 
                     <Nav className='mr-auto'>
-                        <NavLink to="/tweets"><Nav.Link href="/today">#NFT</Nav.Link></NavLink>
-                        <NavLink to="/discover"><Nav.Link href="/discover">Discover</Nav.Link></NavLink>
+                        <NavLink className="nav-link" to='/tweets'>#NFT</NavLink>
+                        
+                        <NavLink className="nav-link" to="/discover">Discover</NavLink>
                     </Nav>
                     
                     <NavLink to="/new" exact>
