@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchContainer from './SearchContainer'
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import DayContainer from './DayContainer';
@@ -40,7 +41,8 @@ class CalendarContainer extends Component {
 
     render() {
         return(
-            <div>
+            <>
+                <SearchContainer />
                 <Container className="h-100">
                     <Jumbotron className="calendar py-2">
                         <h1 className="header">Dropping this week</h1>
@@ -48,7 +50,7 @@ class CalendarContainer extends Component {
                         {this.handleLoading()}
                     </Jumbotron>
                 </Container>
-            </div>
+            </>
         )
     }
 }

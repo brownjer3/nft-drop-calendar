@@ -20,12 +20,6 @@ class TweetsContainer extends Component {
                         options={{height: 400}}
                     />
                 </div>
-                {/* <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName="saurabhnemade"
-                noHeader={true} 
-                options={{height: 400}}
-                /> */}
             </Container>
         )
     }

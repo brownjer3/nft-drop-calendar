@@ -7,10 +7,6 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 
 class RandomContainer extends Component {
-    // state = {
-    //     image: "https://res.cloudinary.com/nifty-gateway/image/upload/q_auto:good,w_500/v1615502630/AMatthew/NateHillMarch15/nate-auction-icon_j7frwi.png"
-    // }
-
     render() {
         return (
                 <Row className="h-100">
