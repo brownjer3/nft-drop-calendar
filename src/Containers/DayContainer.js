@@ -12,7 +12,7 @@ class DayContainer extends Component {
                 dates.push(event.drop_date)
             }
         })
-        return dates
+        return dates.sort()
     }
 
 
