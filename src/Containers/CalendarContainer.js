@@ -22,9 +22,9 @@ class CalendarContainer extends Component {
 
     eventsToDisplay = () => {
         if (this.state.query) {
-            let displayedEvents = this.props.events
             return this.props.events.filter((event) => {
-                return event.title.includes(this.state.query)
+                const attrs = event.title + event.creator_name + event.platform_name + event.type_name
+                return attrs.toLowerCase().includes(this.state.query)
             })
         } else {
             return this.displayUpcomingEvents()
@@ -48,9 +48,6 @@ class CalendarContainer extends Component {
     }
 
     handleInputChange = (e) => {
-        const matchedEvents = this.props.events.filter((event) => {
-            
-        })
         this.setState(prevState => ({
             ...prevState,
             query: e.target.value
