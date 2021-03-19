@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchContainer from './SearchContainer'
-import DayContainer from './DayContainer';
+import DaysContainer from './DaysContainer';
 import {connect} from 'react-redux'
 import { fetchEvents } from '../Actions/eventActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -31,7 +31,7 @@ class CalendarContainer extends Component {
         if (this.props.loading) {
             return <FontAwesomeIcon icon={faIgloo} size='2x'/>
         } else {
-            return <DayContainer events={this.displayUpcomingEvents()} />
+            return <DaysContainer events={this.displayUpcomingEvents()} />
         }
     }
 

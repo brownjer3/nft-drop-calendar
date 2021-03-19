@@ -3,7 +3,7 @@ import Day from "../Components/Day";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
-class DayContainer extends Component {
+class DaysContainer extends Component {
 
     getUniqueDates = () => {
         const dates = []
@@ -31,7 +31,6 @@ class DayContainer extends Component {
                 <Jumbotron className="calendar py-2">
                     <h1 className="header">Dropping this week</h1>
                     <hr className="border-info"/>
-                    
                     {this.mapEventDates()}
                 </Jumbotron>
             </Container>
@@ -39,4 +38,4 @@ class DayContainer extends Component {
     }
 }
 
-export default DayContainer
+export default DaysContainer

@@ -3,7 +3,6 @@ import Event from "./Event";
 import Table from 'react-bootstrap/Table'
 import {DayHeader} from './DayHeader'
 
-
 class Day extends Component {
 
     makeEvents = () => {
