@@ -3,7 +3,6 @@ export default function eventReducer(state =
     events: [],
     loading: false
     }, action) {
-
     switch(action.type){
         case 'LOADING_EVENTS':
             return {
@@ -17,14 +16,15 @@ export default function eventReducer(state =
                 events: action.events, 
                 loading: false
             }
-        case "ADD_EVENT":
+        case 'ADD_EVENT':
+            debugger
             return {
                 ...state, 
                 events: state.events.concat(action.event) 
             }
         case "DELETE_EVENT":
             return state
-            case "EDIT_EVENT":
+        case "EDIT_EVENT":
             return state
         default:
             return state

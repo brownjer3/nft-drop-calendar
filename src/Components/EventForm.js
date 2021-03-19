@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
+import {connect} from 'react-redux'
+import { createEvent } from '../Actions/eventActions'
 
 
 class EventForm extends Component {
@@ -15,7 +17,7 @@ class EventForm extends Component {
     }
 
     handleSubmit = (e) => {
-        e.peventDefault()
+        e.preventDefault()
         this.props.createEvent(this.state)
         this.setState({
             title: "", 
@@ -36,7 +38,7 @@ class EventForm extends Component {
 
     render() {
         return(
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={(e) => this.handleSubmit(e)}>
                 <Form.Row>
                     <Form.Group as={Col} >
                         <Form.Label>Title</Form.Label>
@@ -90,4 +92,9 @@ class EventForm extends Component {
     }
 }
 
-export default EventForm
+const mapDispatchToProps = dispatch => ({
+        createEvent: eventData => dispatch(createEvent(eventData))
+    })
+
+
+export default connect(null, mapDispatchToProps)(EventForm)

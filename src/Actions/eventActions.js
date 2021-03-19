@@ -12,18 +12,17 @@ export const fetchEvents = () => {
 }
 
 export const createEvent = (event) => {
-
     return (dispatch) => {
         const configObj = {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json", 
-                "Accept-Type": "application/json"
+                "Accepts": "application/json"
             }, 
             body: JSON.stringify(event)
         }
         fetch(url, configObj)
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             dispatch({ type: 'ADD_EVENT', event: data })
         })
