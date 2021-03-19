@@ -8,10 +8,8 @@ class SearchContainer extends Component {
     render() {
         return(
             <Container>
-                <div>
                     <Search handleInputChange={this.props.handleInputChange}/>
                     <FilterContainer />
-                </div>
             </Container>
         )
     }

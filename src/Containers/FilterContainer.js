@@ -6,10 +6,10 @@ class FilterContainer extends Component {
     render() {
         return(
             <Container className="d-flex justify-content-around m-2">
-                <Button className="badge rounded-pill" variant="info">Today</Button>
-                <Button className="badge rounded-pill" variant="info">Hot Drops</Button>
-                <Button className="badge rounded-pill" variant="info">By Marketplace</Button>
-                <Button className="badge rounded-pill" variant="info">By Network</Button>
+                {/* <Button className="badge rounded-pill" variant="info">Today</Button> */}
+                <Button className=" rounded-pill" variant="info">Free! 🤑</Button>
+                <Button className=" rounded-pill" variant="info">By Marketplace</Button>
+                <Button className=" rounded-pill" variant="info">By Network</Button>
             </Container>
         )
     }

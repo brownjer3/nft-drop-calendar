@@ -48,10 +48,9 @@ class CalendarContainer extends Component {
     }
 
     handleInputChange = (e) => {
-        this.setState(prevState => ({
-            ...prevState,
+        this.setState({
             query: e.target.value
-        }))
+        })
     }
 
     render() {
