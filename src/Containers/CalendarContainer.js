@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import DayContainer from './DayContainer';
 import {connect} from 'react-redux'
 import { fetchEvents } from '../Actions/eventActions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
 class CalendarContainer extends Component {
@@ -13,6 +15,15 @@ class CalendarContainer extends Component {
         this.props.fetchEvents()
     }
 
+    handleLoading = () => {
+        console.log(this.props)
+        if (this.props.loading) {
+            return <FontAwesomeIcon icon={faIgloo} size='2x'/>
+        } else {
+            return <DayContainer events={this.props.events} />
+        }
+    }
+
     render() {
         return(
             <div>
@@ -20,7 +31,7 @@ class CalendarContainer extends Component {
                     <Jumbotron className="calendar py-2">
                         <h1 className="header"></h1>
                         <hr className="border-info"/>
-                        <DayContainer events={this.props.events} />
+                        {this.handleLoading()}
                     </Jumbotron>
                 </Container>
             </div>
