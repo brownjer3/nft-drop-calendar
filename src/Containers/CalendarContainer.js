@@ -1,34 +1,30 @@
 import React, { Component } from "react";
 import SearchContainer from './SearchContainer'
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
 import DayContainer from './DayContainer';
 import {connect} from 'react-redux'
 import { fetchEvents } from '../Actions/eventActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
 import moment from "moment";
 
 
 class CalendarContainer extends Component {
-    //connect to redux here for currentDay from state
 
     state = {
         startDate: new Date(), 
         displayEvents: []
     }
 
+    componentDidMount() {
+        this.props.fetchEvents()
+    }
+
     displayUpcomingEvents = () => {
-        const events = this.props.events.filter((event) => {
+        return this.props.events.filter((event) => {
             const start = moment(this.state.startDate)
             const date = moment(event.drop_date)
             return date.diff(start, 'days') <= 7 && date.diff(start, 'days') >= 0
         })
-        return events
-    }
-
-    componentDidMount() {
-        this.props.fetchEvents()
     }
 
     handleLoading = () => {
@@ -43,13 +39,7 @@ class CalendarContainer extends Component {
         return(
             <>
                 <SearchContainer />
-                <Container className="h-100">
-                    <Jumbotron className="calendar py-2">
-                        <h1 className="header">Dropping this week</h1>
-                        <hr className="border-info"/>
-                        {this.handleLoading()}
-                    </Jumbotron>
-                </Container>
+                {this.handleLoading()}
             </>
         )
     }

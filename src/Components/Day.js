@@ -1,28 +1,27 @@
 import React, { Component } from "react";
-import EventsContainer from "../Containers/EventsContainer";
-import {connect} from 'react-redux'
-import moment from 'moment'
+import Event from "./Event";
+import Table from 'react-bootstrap/Table'
+import {DayHeader} from './DayHeader'
 
 
 class Day extends Component {
 
-    filterEvents = () => {
-        return this.props.events.filter((event) => event.drop_date === this.props.date)
+    makeEvents = () => {
+        return this.props.events.map((event) => <Event key={event.id} event={event} />)
     }
 
     render() {
         return(
-            <div>
-                <h3 className="d-flex pl-2">{moment(this.props.date).format('dddd, MMMM Do')}</h3>
-                <EventsContainer events={this.filterEvents()} />
-            </div>
+            <>
+                <DayHeader date={this.props.date}/>
+                <Table striped hover variant="dark">
+                    <tbody>
+                        {this.makeEvents()}
+                    </tbody>
+                </Table>
+            </>
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        events: state.events
-    }
-}
 
-export default connect(mapStateToProps)(Day)
+export default Day

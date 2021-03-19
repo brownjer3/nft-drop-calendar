@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Day from "../Components/Day";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
 
 class DayContainer extends Component {
-    // this is where i'll organize all events into dates
-    // also where date filtering should happen (based on current day)
 
     getUniqueDates = () => {
         const dates = []
@@ -15,18 +15,26 @@ class DayContainer extends Component {
         return dates.sort()
     }
 
+    filterEvents = (date) => {
+        return this.props.events.filter((event) => event.drop_date === date)
+    }
 
     mapEventDates = () => {
         return this.getUniqueDates().map(date => {
-            return <Day key={date} date={date} />
+            return <Day key={date} date={date} events={this.filterEvents(date)}/>
         })
     }
 
     render() {
         return(
-            <div>
-                {this.mapEventDates()}
-            </div>
+            <Container className="h-100">
+                <Jumbotron className="calendar py-2">
+                    <h1 className="header">Dropping this week</h1>
+                    <hr className="border-info"/>
+                    
+                    {this.mapEventDates()}
+                </Jumbotron>
+            </Container>
         )
     }
 }
