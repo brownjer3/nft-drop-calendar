@@ -1,12 +1,12 @@
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 
-export const MarketplaceDropdown = ({platforms}) => {
+export const MarketplaceDropdown = ({platforms, handleInputChange}) => {
     const makePlatformOptions = () => {
-        return platforms.map(p => <Dropdown.Item>{p}</Dropdown.Item>)
+        return platforms.map(p => <Dropdown.Item onSelect={(e) => handleInputChange(e)} value={p}>{p}</Dropdown.Item>)
     }
     return (
-        <DropdownButton id="dropdown-basic-button" title="By Marketplace" className="rounded-pill" variant="info">
+        <DropdownButton id="marketplace-filter" title="By Marketplace" className="rounded-pill" variant="info">
             {makePlatformOptions()}
         </DropdownButton>
     )

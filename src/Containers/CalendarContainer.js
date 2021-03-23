@@ -22,12 +22,7 @@ class CalendarContainer extends Component {
 
     eventsToDisplay = () => {
         if (this.state.query) {
-            return this.props.events.filter((event) => {
-                const attrs = event.title + event.creator_name + event.platform_name + event.type_name
-                return attrs.toLowerCase().includes(this.state.query)
-            })
-        } else if (this.state.displayEvents.length > 0) {
-            return this.state.displayEvents
+            return this.filterEvents()
         } else {
             return this.displayUpcomingEvents()
         }
@@ -39,6 +34,17 @@ class CalendarContainer extends Component {
             const date = moment(event.drop_datetime)
             return date.diff(start, 'days') <= 7 && date.diff(start, 'days') >= 0
         })
+    }
+
+    filterEvents = () => {
+        if (this.state.query === 'free') {
+            return this.props.events.filter(event => event.free)
+        } else {
+            return this.props.events.filter((event) => {
+                const attrs = event.title + event.creator_name + event.platform_name + event.type_name
+                return attrs.toLowerCase().includes(this.state.query)
+            })
+        }
     }
 
     handleLoading = () => {
@@ -58,12 +64,16 @@ class CalendarContainer extends Component {
     handleFilters = (e) => {
         switch(e.target.id) {
             case 'free-button':
+                return 'hello'
+                // this.setState((prevState) => {
+                //     const freeEvents = prevState.displayEvents.filter(event => event.free)
+                //     return {displayEvents: freeEvents}
+                // })
+            case 'markplace-filter':
                 const freeEvents = this.props.events.filter(event => event.free)
-                // debugger
-                this.setState({
-                    displayEvents: freeEvents
-                })
-
+                // this.setState(prevState)
+             case 'type-filter': 
+                return 'helo'
         }
     }
 
@@ -79,7 +89,7 @@ class CalendarContainer extends Component {
         return(
             <>
                 <SearchContainer
-                    handleFilters={this.handleFilters}
+                    // handleFilters={this.handleFilters}
                     handleSubmit={this.handleSubmit}
                     handleInputChange={this.handleInputChange}
                 />

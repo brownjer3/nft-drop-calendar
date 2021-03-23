@@ -9,7 +9,7 @@ class SearchContainer extends Component {
         return(
             <Container>
                     <Search handleSubmit={this.props.handleSubmit} handleInputChange={this.props.handleInputChange}/>
-                    <FilterContainer handleFilters={this.props.handleFilters}/>
+                    <FilterContainer handleInputChange={this.props.handleInputChange}/>
             </Container>
         )
     }
