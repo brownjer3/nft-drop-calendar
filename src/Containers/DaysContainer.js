@@ -8,15 +8,15 @@ class DaysContainer extends Component {
     getUniqueDates = () => {
         const dates = []
         this.props.events.forEach(event => {
-            if (!dates.includes(event.drop_date)) {
-                dates.push(event.drop_date)
+            if (!dates.includes(event.drop_datetime)) {
+                dates.push(event.drop_datetime)
             }
         })
         return dates.sort()
     }
 
     filterEvents = (date) => {
-        return this.props.events.filter((event) => event.drop_date === date)
+        return this.props.events.filter((event) => event.drop_datetime === date)
     }
 
     mapEventDates = () => {

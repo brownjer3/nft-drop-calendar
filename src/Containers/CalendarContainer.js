@@ -34,7 +34,7 @@ class CalendarContainer extends Component {
     displayUpcomingEvents = () => {
         return this.props.events.filter((event) => {
             const start = moment(this.state.startDate)
-            const date = moment(event.drop_date)
+            const date = moment(event.drop_datetime)
             return date.diff(start, 'days') <= 7 && date.diff(start, 'days') >= 0
         })
     }
