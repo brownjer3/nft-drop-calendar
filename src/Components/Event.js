@@ -9,7 +9,7 @@ const Event = ({event, time}) => {
 
     return (
         <tr>        
-            <td>{time} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+            <td colSpan="1">{time} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
             <td><Image rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
             <td>{event.title}</td>
             <td>{event.creator_name}</td>
