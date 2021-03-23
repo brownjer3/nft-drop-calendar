@@ -18,7 +18,7 @@ class Day extends Component {
         return(
             <>
                 <DayHeader date={this.props.date}/>
-                <Table striped hover variant="dark">
+                <Table responsive striped hover variant="dark">
                     <tbody>
                         {this.makeEvents()}
                     </tbody>

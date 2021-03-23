@@ -28,8 +28,8 @@ class DaysContainer extends Component {
     render() {
         return(
             <Container className="h-100">
-                <Jumbotron className="calendar py-2">
-                    <h1 className="header">Dropping this week</h1>
+                <Jumbotron className="calendar pt-2">
+                    <h1 className="header"></h1>
                     <hr className="border-info"/>
                     {this.mapEventDates()}
                 </Jumbotron>
