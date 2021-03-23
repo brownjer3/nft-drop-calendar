@@ -1,16 +1,14 @@
-import React, { Component } from "react";
-// import Button from 'react-bootstrap/Button'
+import React, { Component } from "react"
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
-// import Button from 'react-bootstrap/Button'
 
 const Search = ({handleSubmit, handleInputChange}) => {
     return (
         <Form inline onSubmit={(e) => handleSubmit(e)}>
-            <Col>
+            <Col >
                 <FormControl type="text" placeholder="Search for a drop" className="my-3 w-50" size="lg" onChange={(e) => handleInputChange(e)}/>
-                {/* <Button variant="outline-info" size="lg">Search</Button> */}
+                <FormControl type="date" size="lg" className='ml-2' onChange={(e) => handleInputChange(e)}/>
             </Col>
         </Form>  
     )
