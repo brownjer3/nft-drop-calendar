@@ -8,8 +8,7 @@ import Image from 'react-bootstrap/Image';
 const Event = ({event, time}) => {
 
     return (
-        <tr>
-            {/* <td>{moment(event.drop_droptime).toDate().format('h:mm a')} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td> */}
+        <tr>        
             <td>{time} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
             <td><Image rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
             <td>{event.title}</td>

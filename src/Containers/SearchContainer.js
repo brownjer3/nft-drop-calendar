@@ -8,7 +8,7 @@ class SearchContainer extends Component {
     render() {
         return(
             <Container>
-                    <Search handleInputChange={this.props.handleInputChange}/>
+                    <Search handleSubmit={this.props.handleSubmit} handleInputChange={this.props.handleInputChange}/>
                     <FilterContainer />
             </Container>
         )

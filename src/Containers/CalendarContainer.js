@@ -53,10 +53,18 @@ class CalendarContainer extends Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        e.target.reset()
+        this.setState({
+            query: ""
+        })
+    }
+
     render() {
         return(
             <>
-                <SearchContainer handleInputChange={this.handleInputChange}/>
+                <SearchContainer handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
                 {this.handleLoading()}
             </>
         )
