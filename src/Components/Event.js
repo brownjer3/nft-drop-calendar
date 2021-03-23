@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons'
 import Image from 'react-bootstrap/Image';
-import moment from 'moment'
 
 
-const Event = ({event}) => {
+
+const Event = ({event, time}) => {
+
     return (
         <tr>
-            <td>{moment(event.drop_time).format('h:mm a')} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
+            {/* <td>{moment(event.drop_droptime).toDate().format('h:mm a')} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td> */}
+            <td>{time} <br/><FontAwesomeIcon icon={faCalendarPlus} size='lg' /></td>
             <td><Image rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
             <td>{event.title}</td>
             <td>{event.creator_name}</td>
