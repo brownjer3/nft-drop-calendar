@@ -42,7 +42,7 @@ class CalendarContainer extends Component {
         } else {
             return this.props.events.filter((event) => {
                 const attrs = event.title + event.creator_name + event.platform_name + event.type_name
-                return attrs.toLowerCase().includes(this.state.query)
+                return attrs.toLowerCase().includes(this.state.query.toLowerCase())
             })
         }
     }
@@ -56,25 +56,17 @@ class CalendarContainer extends Component {
     }
 
     handleInputChange = (e) => {
+        // debugger
         this.setState({
             query: e.target.value
         })
     }
 
-    handleFilters = (e) => {
-        switch(e.target.id) {
-            case 'free-button':
-                return 'hello'
-                // this.setState((prevState) => {
-                //     const freeEvents = prevState.displayEvents.filter(event => event.free)
-                //     return {displayEvents: freeEvents}
-                // })
-            case 'markplace-filter':
-                const freeEvents = this.props.events.filter(event => event.free)
-                // this.setState(prevState)
-             case 'type-filter': 
-                return 'helo'
-        }
+    handleFilters = (eventKey) => {
+        // debugger
+        this.setState({
+            query: eventKey
+        })
     }
 
     handleSubmit = (e) => {
@@ -89,7 +81,7 @@ class CalendarContainer extends Component {
         return(
             <>
                 <SearchContainer
-                    // handleFilters={this.handleFilters}
+                    handleFilters={this.handleFilters}
                     handleSubmit={this.handleSubmit}
                     handleInputChange={this.handleInputChange}
                 />

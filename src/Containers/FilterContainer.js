@@ -9,8 +9,8 @@ class FilterContainer extends Component {
         return(
             <Container className="d-flex justify-content-around m-2">
                 <Button onClick={(e) => this.props.handleInputChange(e)} id="free-button" value='free' variant="info">Free! 🤑</Button>
-                <MarketplaceDropdown handleInputChange={this.props.handleInputChange} platforms={this.props.platforms}/>
-                <TypeDropdown types={this.props.types}/>
+                <MarketplaceDropdown handleFilters={this.props.handleFilters} platforms={this.props.platforms}/>
+                <TypeDropdown handleFilters={this.props.handleFilters} types={this.props.types}/>
             </Container>
         )
     }
