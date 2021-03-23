@@ -26,6 +26,8 @@ class CalendarContainer extends Component {
                 const attrs = event.title + event.creator_name + event.platform_name + event.type_name
                 return attrs.toLowerCase().includes(this.state.query)
             })
+        } else if (this.state.displayEvents.length > 0) {
+            return this.state.displayEvents
         } else {
             return this.displayUpcomingEvents()
         }
@@ -53,6 +55,18 @@ class CalendarContainer extends Component {
         })
     }
 
+    handleFilters = (e) => {
+        switch(e.target.id) {
+            case 'free-button':
+                const freeEvents = this.props.events.filter(event => event.free)
+                // debugger
+                this.setState({
+                    displayEvents: freeEvents
+                })
+
+        }
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
         e.target.reset()
@@ -64,7 +78,11 @@ class CalendarContainer extends Component {
     render() {
         return(
             <>
-                <SearchContainer handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange}/>
+                <SearchContainer
+                    handleFilters={this.handleFilters}
+                    handleSubmit={this.handleSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
                 {this.handleLoading()}
             </>
         )
