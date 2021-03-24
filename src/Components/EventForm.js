@@ -11,8 +11,9 @@ class EventForm extends Component {
         title: "", 
         creator_name: "", 
         platform_name: "", 
+        drop_link: "",
         asset_url: "", 
-        drop_date: "", 
+        drop_datetime: "", 
         type_name: ""
     }
 
@@ -23,8 +24,9 @@ class EventForm extends Component {
             title: "", 
             creator_name: "", 
             platform_name: "", 
+            drop_link: "",
             asset_url: "", 
-            drop_date: "", 
+            drop_datetime: "", 
             type_name: ""
         })
         
@@ -49,7 +51,7 @@ class EventForm extends Component {
                 </Form.Row>
                 <Form.Group controlId="formGridAddress1">
                     <Form.Label>Creator</Form.Label>
-                    <Form.Control placeholder="Creator name" name="creator_name" value={this.state.creator_name} onChange={this.handleInputChange}/>
+                    <Form.Control placeholder="Creator's name" name="creator_name" value={this.state.creator_name} onChange={this.handleInputChange}/>
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress2">
@@ -58,31 +60,36 @@ class EventForm extends Component {
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress1">
+                    <Form.Label>Drop link</Form.Label>
+                    <Form.Control type='url' placeholder="Link to the drop" name="drop_link" value={this.state.drop_link} onChange={this.handleInputChange}/>
+                </Form.Group>
+
+                <Form.Group controlId="formGridAddress1">
                     <Form.Label>Asset link</Form.Label>
-                    <Form.Control type='url' placeholder="Url " name="asset_url" value={this.state.asset_url} onChange={this.handleInputChange}/>
+                    <Form.Control type='url' placeholder="Image/gif link" name="asset_url" value={this.state.asset_url} onChange={this.handleInputChange}/>
                 </Form.Group>
 
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Date</Form.Label>
-                        <Form.Control type="datetime-local" name="drop_date" value={this.state.drop_date} onChange={this.handleInputChange}/>
+                        <Form.Control type="datetime-local" name="drop_datetime" value={this.state.drop_datetime} onChange={this.handleInputChange}/>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Type</Form.Label>
                         <Form.Control as="select" defaultValue="Choose...">
-                            <option>Choose...</option>
-                            <option>...</option>
+                            <option value='Art'>Art</option>
+                            <option value='Trading Cards'>Trading Cards</option>
                         </Form.Control>
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridState">
+                    {/* <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Tags</Form.Label>
                         <Form.Control as="select" defaultValue="Choose...">
                             <option>Choose...</option>
                             <option>...</option>
                         </Form.Control>
-                    </Form.Group>
+                    </Form.Group> */}
                 </Form.Row>
 
                 <Button variant="info" type="submit">
