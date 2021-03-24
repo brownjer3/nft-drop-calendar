@@ -34,6 +34,7 @@ class CalendarContainer extends Component {
             const date = moment(event.drop_datetime)
             return date.diff(start, 'days') <= 7 && date.diff(start, 'days') >= 0
         })
+        
     }
 
     filterEvents = () => {
@@ -56,14 +57,18 @@ class CalendarContainer extends Component {
     }
 
     handleInputChange = (e) => {
-        // debugger
-        this.setState({
-            query: e.target.value
-        })
+        if (e.target.id === "date-filter") {
+            this.setState({
+                startDate: new Date(e.target.value)
+            })
+        } else {
+            this.setState({
+                query: e.target.value
+            })
+        }
     }
 
     handleFilters = (eventKey) => {
-        // debugger
         this.setState({
             query: eventKey
         })
