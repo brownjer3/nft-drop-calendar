@@ -16,7 +16,7 @@ class DaysContainer extends Component {
                 dates.push(dateString)
             }
         })
-        return dates.sort().reverse()
+        return dates.sort((a,b) => new Date(a) - new Date(b))
     }
 
     filterEvents = (date) => {

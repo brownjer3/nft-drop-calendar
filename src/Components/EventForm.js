@@ -22,7 +22,6 @@ class EventForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        debugger
         this.props.createEvent(this.state)
         this.setState({
             title: "", 
