@@ -17,7 +17,7 @@ class TweetsContainer extends Component {
                         // noScrollbar
                         transparent
                         theme='dark'
-                        options={{height: 400}}
+                        options={{height: 600}}
                     />
                 </div>
             </Container>
