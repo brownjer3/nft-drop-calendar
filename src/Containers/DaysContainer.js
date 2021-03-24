@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Day from "../Components/Day";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
+import moment from 'moment'
 
 
 class DaysContainer extends Component {
@@ -9,19 +10,22 @@ class DaysContainer extends Component {
     getUniqueDates = () => {
         const dates = []
         this.props.events.forEach(event => {
-            if (!dates.includes(event.drop_datetime)) {
-                dates.push(event.drop_datetime)
+            // const dateString = moment(event.drop_datetime).format('dddd, MMMM Do')
+            const dateString = new Date(event.drop_datetime).toDateString()
+            if (!dates.includes(dateString)) {
+                dates.push(dateString)
             }
         })
-        return dates.sort()
+        return dates.sort().reverse()
     }
 
     filterEvents = (date) => {
-        return this.props.events.filter((event) => event.drop_datetime === date)
+        return this.props.events.filter((event) => new Date(event.drop_datetime).toDateString() === date)
     }
 
     mapEventDates = () => {
         return this.getUniqueDates().map(date => {
+            
             return <Day key={date} date={date} events={this.filterEvents(date)}/>
         })
     }
