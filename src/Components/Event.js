@@ -2,10 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarPlus } from '@fortawesome/free-solid-svg-icons'
 import Image from 'react-bootstrap/Image';
-import AddToCalendar from 'react-add-to-calendar';
-import AddToCalendarHOC from 'react-add-to-calendar-hoc';
-import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/DropdownButton'
+import AddToCalendar from '@culturehq/add-to-calendar';
+import '@culturehq/add-to-calendar/dist/styles.css'
+import moment from 'moment'
 
 
 
@@ -17,11 +16,11 @@ const Event = ({event, time}) => {
     // }
 
     let exportable = {
-        title: 'Sample Event',
-        description: 'This is the sample event provided as an example only',
-        location: 'Portland, OR',
-        startTime: '2016-09-16T20:15:00-04:00',
-        endTime: '2016-09-16T21:45:00-04:00'
+        name: event.title,
+        details: 'NFT drop on ' + event.platform_name,
+        location: event.drop_link,
+        startsAt: event.drop_datetime,
+        endsAt: moment(event.drop_datetime).add(15, 'm').toDate()
     }
 
     return (
@@ -29,14 +28,14 @@ const Event = ({event, time}) => {
             <td colSpan="1" className="align-middle">
                 {time}
                 <br/> <br/>
-                <Button><AddToCalendar event={exportable} /></Button>
+                <AddToCalendar event={exportable}/>
                 {/* <FontAwesomeIcon icon={faCalendarPlus} size='lg' /> */}
             </td>
-            <td colSpan="2" className="align-middle"><Image rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
-            <td colSpan="4" className="align-middle">{event.title}</td>
-            <td colSpan="4" className="align-middle">{event.creator_name}</td>
-            <td colSpan="4" className="align-middle">{event.platform_name}</td>
-            <td colSpan="4" className="align-middle">{event.type_name}</td>
+            <td colSpan="3" className="align-middle"><Image fluid rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
+            <td colSpan="2" className="align-middle">{event.title}</td>
+            <td colSpan="2" className="align-middle">{event.creator_name}</td>
+            <td colSpan="2" className="align-middle">{event.platform_name}</td>
+            <td colSpan="1" className="align-middle">{event.type_name}</td>
         </tr>
     )
 }

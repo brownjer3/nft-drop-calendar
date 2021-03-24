@@ -42,3 +42,8 @@
   background-color:transparent !important;
   color: white !important
 }
+
+.table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
