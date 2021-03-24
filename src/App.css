@@ -40,10 +40,32 @@
 
 .calendar {
   background-color:transparent !important;
-  color: white !important
+  color: white !important;
+  /* overflow: visible !important; */
 }
 
 .table {
   table-layout: fixed;
   word-wrap: break-word;
+  /* overflow: visible !important; */
 }
+
+/* .chq-atc--dropdown { */
+  /* display: flex !important;
+  flex-direction: column; */
+  /* left: -35px; */
+  /* overflow: visible !important;
+
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  box-shadow: .5px .5px 3px rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 10; */
+
+/* } */

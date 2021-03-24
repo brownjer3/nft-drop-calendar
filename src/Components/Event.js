@@ -24,7 +24,7 @@ const Event = ({event, time}) => {
             <td colSpan="1" className="align-middle">
                 {time}
                 <br/> <br/>
-                <AddToCalendar event={exportable} className='dropdown-menu dropdown-menu-left'/>
+                <AddToCalendar event={exportable}/>
                 {/* <FontAwesomeIcon icon={faCalendarPlus} size='lg' /> */}
             </td>
             <td colSpan="3" className="align-middle"><Image fluid rounded src={event.asset_url} style={{ height: '6rem' }}/></td>
