@@ -7,7 +7,10 @@ import moment from 'moment'
 class Day extends Component {
 
     makeEvents = () => {
-        return this.props.events.map((event) => <Event key={event.id} event={event} time={this.displayTime(event)} />)
+        const sorted = this.props.events.sort((a,b) => new Date(a.drop_datetime).getTime() - new Date(b.drop_datetime).getTime())
+        // homes.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+        // debugger
+        return sorted.map((event) => <Event key={event.id} event={event} time={this.displayTime(event)} />)
     }
 
     displayTime = (e) => {
