@@ -14,13 +14,13 @@ class EventForm extends Component {
         drop_link: "",
         asset_url: "", 
         drop_datetime: "", 
-        type_name: "Art"
+        type_name: "Art", 
+        free: false
         // timezone: "-07:00"
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        debugger
         this.props.createEvent(this.state)
         this.setState({
             title: "", 
@@ -29,7 +29,8 @@ class EventForm extends Component {
             drop_link: "",
             asset_url: "", 
             drop_datetime: "", 
-            type_name: ""
+            type_name: "Art", 
+            free: false
         })
         
     }
@@ -39,7 +40,11 @@ class EventForm extends Component {
             this.setState({
                 drop_datetime: new Date(e.target.value)
             })
-        } else{
+        } else if (e.target.name === 'free') {
+            this.setState(prevState => {
+                return {...prevState, free: !prevState.free}
+            })
+        } else {
             this.setState({
                 [e.target.name]: e.target.value
             })
@@ -77,7 +82,7 @@ class EventForm extends Component {
                     <Form.Control type='text' placeholder="Image/gif link" name="asset_url" value={this.state.asset_url} onChange={this.handleInputChange}/>
                 </Form.Group>
 
-                <Form.Row>
+                <Form.Row className="d-flex align-items-end">
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Date</Form.Label>
                         <Form.Control type="datetime-local" name="drop_datetime" value={this.state.drop_datetime} onChange={this.handleInputChange}/>
@@ -90,6 +95,12 @@ class EventForm extends Component {
                             <option value='Trading Cards'>Trading Cards</option>
                         </Form.Control>
                     </Form.Group>
+
+                    <Form.Group as={Col} >
+                        <Form.Check onChange={this.handleInputChange} name='free' type="switch" id="custom-switch" label="Free?" />
+                    </Form.Group>
+
+                    
 
                     {/* <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Tags</Form.Label>
