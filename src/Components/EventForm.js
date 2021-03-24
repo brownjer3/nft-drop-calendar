@@ -14,11 +14,13 @@ class EventForm extends Component {
         drop_link: "",
         asset_url: "", 
         drop_datetime: "", 
-        type_name: ""
+        type_name: "Art"
+        // timezone: "-07:00"
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
+        debugger
         this.props.createEvent(this.state)
         this.setState({
             title: "", 
@@ -33,9 +35,15 @@ class EventForm extends Component {
     }
 
     handleInputChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        if (e.target.name === "drop_datetime") {
+            this.setState({
+                drop_datetime: new Date(e.target.value)
+            })
+        } else{
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        } 
     }
 
 
@@ -61,12 +69,12 @@ class EventForm extends Component {
 
                 <Form.Group controlId="formGridAddress1">
                     <Form.Label>Drop link</Form.Label>
-                    <Form.Control type='url' placeholder="Link to the drop" name="drop_link" value={this.state.drop_link} onChange={this.handleInputChange}/>
+                    <Form.Control type='text' placeholder="Link to the drop" name="drop_link" value={this.state.drop_link} onChange={this.handleInputChange}/>
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress1">
                     <Form.Label>Asset link</Form.Label>
-                    <Form.Control type='url' placeholder="Image/gif link" name="asset_url" value={this.state.asset_url} onChange={this.handleInputChange}/>
+                    <Form.Control type='text' placeholder="Image/gif link" name="asset_url" value={this.state.asset_url} onChange={this.handleInputChange}/>
                 </Form.Group>
 
                 <Form.Row>
@@ -77,7 +85,7 @@ class EventForm extends Component {
 
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Type</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control as="select" defaultValue="Art" name="type_name" onChange={this.handleInputChange}>
                             <option value='Art'>Art</option>
                             <option value='Trading Cards'>Trading Cards</option>
                         </Form.Control>

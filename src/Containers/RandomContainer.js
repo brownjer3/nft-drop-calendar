@@ -5,6 +5,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import moment from 'moment'
 
 class RandomContainer extends Component {
     render() {
@@ -20,7 +21,7 @@ class RandomContainer extends Component {
                                 <Card.Text>{this.props.event.creator_name}</Card.Text>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-                                <ListGroupItem className="bg-transparent">Dropping at <br/>{this.props.event.drop_datetime}</ListGroupItem>
+                                <ListGroupItem className="bg-transparent">Dropping <br/>{moment(this.props.event.drop_datetime).format('dddd, MMMM Do')}</ListGroupItem>
                                 <ListGroupItem className="bg-transparent">{this.props.event.platform_name}</ListGroupItem>
                                 <ListGroupItem className="bg-transparent">{this.props.event.type}</ListGroupItem>
                             </ListGroup>
