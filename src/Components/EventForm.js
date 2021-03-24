@@ -13,6 +13,7 @@ class EventForm extends Component {
         platform_name: "", 
         drop_link: "",
         asset_url: "", 
+        display_date: "",
         drop_datetime: "", 
         type_name: "Art", 
         free: false
@@ -21,6 +22,7 @@ class EventForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        debugger
         this.props.createEvent(this.state)
         this.setState({
             title: "", 
@@ -32,14 +34,11 @@ class EventForm extends Component {
             type_name: "Art", 
             free: false
         })
-        
     }
 
     handleInputChange = (e) => {
-        if (e.target.name === "drop_datetime") {
-            this.setState({
-                drop_datetime: new Date(e.target.value)
-            })
+        if (e.target.name === 'drop_datetime') {
+            this.setState({drop_datetime: new Date(e.target.value), display_date: e.target.value})
         } else if (e.target.name === 'free') {
             this.setState(prevState => {
                 return {...prevState, free: !prevState.free}
@@ -85,7 +84,7 @@ class EventForm extends Component {
                 <Form.Row className="d-flex align-items-end">
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label>Date</Form.Label>
-                        <Form.Control type="datetime-local" name="drop_datetime" value={this.state.drop_datetime} onChange={this.handleInputChange}/>
+                        <Form.Control type="datetime-local" name="drop_datetime" value={this.state.display_date} onChange={this.handleInputChange}/>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
