@@ -34,7 +34,7 @@ class DaysContainer extends Component {
         return(
             <Container className="h-100">
                 <Jumbotron className="calendar pt-2">
-                    <h1 className="header"></h1>
+                    <h1 className="header">Upcoming NFT Drops</h1>
                     <hr className="border-info"/>
                     {this.mapEventDates()}
                 </Jumbotron>
