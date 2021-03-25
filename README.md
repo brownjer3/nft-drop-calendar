@@ -10,12 +10,12 @@ You'll want to fork and clone both this repo and the [backend repo.](https://git
 
 You can verify that everything is running properly by checking for event data at [http://localhost:3000/events.](http://localhost:3000/events) Once the server is running, cd into the frontend directory and start the program with 
 
-### 'npm start'
+### `npm start`
 
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### Collaborating
+## Collaborating
 Pull Requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
