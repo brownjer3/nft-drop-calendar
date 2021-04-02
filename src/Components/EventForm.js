@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import {connect} from 'react-redux'
 import { createEvent } from '../Actions/eventActions'
+import {withRouter} from 'react-router-dom'
 
 
 class EventForm extends Component {
@@ -22,7 +23,7 @@ class EventForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.createEvent(this.state)
+        this.props.createEvent(this.props.history, this.state)
         this.setState({
             title: "", 
             creator_name: "", 
@@ -117,9 +118,9 @@ class EventForm extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-        createEvent: eventData => dispatch(createEvent(eventData))
-    })
+// const mapDispatchToProps = dispatch => ({
+//         something: eventData => dispatch(createEvent(eventData))
+//     })
 
 
-export default connect(null, mapDispatchToProps)(EventForm)
+export default withRouter(connect(null, {createEvent})(EventForm))

@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/tweets" component={TweetsContainer} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/new" component={EventFormContainer} />
-        </>
+          </>
       </Router>
     </div>
   );

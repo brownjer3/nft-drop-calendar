@@ -11,7 +11,7 @@ export const fetchEvents = () => {
       }
 }
 
-export const createEvent = (event) => {
+export const createEvent = (history, event) => {
     return (dispatch) => {
         const configObj = {
             method: "POST", 
@@ -25,6 +25,7 @@ export const createEvent = (event) => {
         .then(res => res.json())
         .then(data => {
             dispatch({ type: 'ADD_EVENT', event: data })
+            history.push('/')
         })
     }
 }
