@@ -8,7 +8,7 @@ export const fetchEvents = () => {
         .then(data => {
           dispatch({ type: 'LOAD_EVENTS', events: data })
         })
-      }
+    }
 }
 
 export const createEvent = (history, event) => {

@@ -11,7 +11,7 @@ import moment from "moment";
 class CalendarContainer extends Component {
 
     state = {
-        startDate: new Date("March 24, 2021"), 
+        startDate: new Date(), 
         displayEvents: [], 
         query: ""
     }
