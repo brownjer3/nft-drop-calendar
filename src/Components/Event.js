@@ -11,39 +11,6 @@ import moment from 'moment'
 
 class Event extends Component {
 
-    state = {
-        likeCount: 0
-    }
-
-    handleLike = () => {
-        this.setState(prevState => {
-            return {likeCount: ++prevState.likeCount}
-        })
-    }
-
-    callApi = () => {
-        // fetch from the backend anything and console log whatever you fetch
-        console.log('a')
-        fetch('http://localhost:3000/evenfdfdsfdsfddsts')
-        .then(response => {
-            if (response.ok) {
-                console.log('b')
-            return response.json()
-            } else {
-                throw new Error('error')
-            }
-            })
-        .then(data => {
-          console.log('c', data)
-        })
-        .catch(err => console.log('d'. err))
-        console.log('e')
-
-        // a e b c 
-        // a e d
-    }
-
-
     render() {
         const exportable = {
             name: this.props.event.title,
@@ -52,8 +19,6 @@ class Event extends Component {
             startsAt: this.props.event.drop_datetime,
             endsAt: moment(this.props.event.drop_datetime).add(30, 'm').toDate()
         }
-
-        // this.handleLike = this.handleLike.bind(this);
 
         return (
             <tr hover={false}>        
@@ -72,12 +37,8 @@ class Event extends Component {
                     </a>
                 </td>
                 <td colSpan="2" className="align-middle">{this.props.event.creator_name}</td>
-                <td colSpan="1" className="align-middle">{this.props.event.platform_name}</td>
+                <td colSpan="2" className="align-middle">{this.props.event.platform_name}</td>
                 <td colSpan="1" className="align-middle">{this.props.event.type_name}</td>
-                <td colSpan="1" className="align-middle">
-                    <button onClick={this.callApi}>Like</button>
-                    <p>{this.state.likeCount}</p>
-                    </td>
             </tr>
         )
     }
